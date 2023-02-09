@@ -4,7 +4,7 @@ const path = require('path');
 const sequelize = require('./config/connection');
 
 const app = express();
-const PORT = 3001 || process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
