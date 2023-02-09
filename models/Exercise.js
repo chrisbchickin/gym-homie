@@ -17,11 +17,21 @@ Exercise.init(
             allowNull: false,
         },
         category_id: {
-            
+            type: DataTypes.INTEGER,
+            references: { model: 'catagory', key: 'id' },
         }, 
         date: {
-            
-        }
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        reps: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        }, 
+        duration: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
     },
     {
         sequelize,
