@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -28,10 +28,15 @@ Exercise.init(
             type: DataTypes.INTEGER,
             allowNull: true,
         }, 
+        weights: {
+            type: DataTypes.INTEGER,
+            allowNull:true, 
+        },
         duration: {
             type: DataTypes.INTEGER,
             allowNull: true,
         },
+        
     },
     {
         sequelize,

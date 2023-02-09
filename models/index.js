@@ -7,17 +7,17 @@ User.hasMany(Exercise, {
     onDelete: 'CASCADE',
 });
 
-Exercise.belongsTo(Driver, {
+Exercise.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
 Category.hasMany(Exercise, {
-    foreignKey: 'user_id',
+    foreignKey: 'category_id',
     onDelete: 'CASCADE',
 });
 
 Exercise.belongsTo(Category, {
-    foreignKey: 'user_id',
+    foreignKey: 'category_id',
 })
 
 module.export = { User, Category, Exercise};
