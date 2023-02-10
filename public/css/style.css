@@ -1,0 +1,32 @@
+
+.gymhomie{
+    font-family: 'Poiret One', 'cursive';
+    font-size: x-large;
+}
+.knav{
+    background-color: black;
+    
+}
+.login-container{
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: center;
+}
+.login{
+    padding: 20px;
+   background-color: rgb(255, 255, 255);
+   border-radius: 20px;
+   margin: 60px;
+}
+.logout{
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin: 60px;
+}
+.btn{
+    margin: 10px;
+}
