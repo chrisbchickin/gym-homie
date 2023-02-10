@@ -11,16 +11,16 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         user_name: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: null,
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
             validate: {
                 isEmail: true,
             },
@@ -29,18 +29,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        hooks: {
-            beforeCreate: async (newUserData) => {
-              newUserData.password = await bcrypt.hash(newUserData.password, 10);
-              return newUserData;
-            },
-            beforeUpdate: async (updatedUserData) => {
-              if (updatedUserData.password) {
-              updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-              }
-              return updatedUserData;
-            },
-          },
+        
     },
     {
         sequelize,
@@ -48,7 +37,7 @@ User.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
-    }
+      }
 );
 
 module.exports = User;
