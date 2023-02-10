@@ -29,4 +29,18 @@
 }
 .btn{
     margin: 10px;
+} 
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+.pastlogs{
+    max-height: 200px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}   
