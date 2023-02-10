@@ -20,4 +20,4 @@ Exercise.belongsTo(Category, {
     foreignKey: 'category_id',
 })
 
-module.export = { User, Category, Exercise};
+module.exports = { User, Category, Exercise };

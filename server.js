@@ -1,5 +1,5 @@
 const express = require('express');
-//const session = require('express-session');
+const session = require('express-session');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
@@ -17,7 +17,7 @@ const sess = {
     saveUninitialized: false,
 };
 
-//app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -28,6 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
 });
