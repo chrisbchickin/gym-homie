@@ -62,6 +62,7 @@ const loginFormHandler = async (event) => {
   };
   
   
+  
 //   document
 //     .getElementById('login')
 //     .addEventListener('submit', loginFormHandler);
@@ -76,7 +77,7 @@ const loginFormHandler = async (event) => {
   sighup.addEventListener("click", signupFormHandler) 
 
  }
-   const logoutbutton = document.querySelector('#logout')
+   const logoutbutton = document.querySelector('#logoutbtn')
 
  if (logoutbutton){
     logoutbutton.addEventListener('click', logout);

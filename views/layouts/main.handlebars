@@ -24,8 +24,10 @@
             <div class="navbar-nav">
               <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
               <a class="nav-link disabled text-light" href="#">Workouts</a>
-              <a class="nav-link text-light" href="/login">Login</a>
+              {{#if logged_in}}
               <a class="nav-link text-light" id="logoutbtn" role="button">Logout</a>
+              {{/if}}
+              
             </div>
           </div>
         </div>
@@ -39,6 +41,7 @@
 
  
   <script src="/js/login.js"></script>
+  <script src="/js/profile.js"></script>
  
 </body>
 </html>
