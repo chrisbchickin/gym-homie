@@ -3,5 +3,15 @@
         "user_name": "a",
         "email": "a@gmail.com",
         "password": "a"
+    },
+    {
+        "user_name": "b",
+        "email": "b@gmail.com",
+        "password": "b"
+    },
+    {
+        "user_name": "c",
+        "email": "c@gmail.com",
+        "password": "c"
     }
 ]
