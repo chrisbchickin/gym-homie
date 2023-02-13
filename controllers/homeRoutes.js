@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
+const { Exercise } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -16,9 +17,10 @@ router.get('/profile', async (req, res) => {
           });
       
           const user = userData.get({ plain: true });
-      
+          console.log(user);
           res.render('profile', {
             ...user,
+            ...Exercise,
             logged_in: true
           });
     } catch (err) {
