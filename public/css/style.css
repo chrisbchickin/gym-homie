@@ -44,3 +44,74 @@
     display: flex;
     flex-direction: column;
 }   
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.pastlogs{
+    max-height: 200px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+.logs-container {
+    width: 400px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-center.log-header {
+    font-size: 40px;
+  }
+  
+  .log {
+    background-color: rgb(120, 117, 117);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .eachlog {
+    text-align: center;
+    background-color: rgb(168, 168, 168);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    
+    transition: 1s;
+  }
+  .eachlog:hover{
+    border-top: 20px;
+    border-color: aqua;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+   scale: 110%;
+  }
+  .eachlog small {
+    float: left;
+    margin-bottom: 10px;
+    top: 20px;
+  }
+  
+  .eachlog .separator {
+    width: 1px;
+    height: 30px;
+    background-color: #000;
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .eachlog small.date {
+    float: right;
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: rgb(255, 248, 248);
+  }
+  

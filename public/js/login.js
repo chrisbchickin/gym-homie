@@ -5,7 +5,7 @@ const loginFormHandler = async (event) => {
     const email = document.querySelector('#loginemail').value.trim();
     const password = document.querySelector('#loginpassword').value.trim();
   
-    console.log(user);
+    // console.log(user);
     
     if (email && password) {
         console.log(email, password);
