@@ -1,8 +1,47 @@
+
+<div class="container"> 
+    <div  style="display: flex; height: 600px; overflow: scroll; margin: 30px;">
+    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Logs</span> 
+        
+ <div class="text-center eachlog" >
+    <small>90min</small> 
+     <div class="separator"></div> Back <br><small class="date">01/01/2023</small> </div>
+      <div style="display: flex; padding: 200px; height: 10px; ">
+      <a role="button" href="/exerciseform"><span class="material-symbols-outlined text-center" style="color: rgb(0, 0, 0); font-size: 100px;" id="addicon">
+        add
+        </span></a></div>
+       
+   
+    </div>
+
 <div class="container">
-    <div class="box">
-      <div class="card m-3 pastlogs" style="width: 18rem;">
-        <div class="card-header">
-          Chest
+  <div class="box">
+    <div>
+      <h3> Welcome, {{user_name}} </h3>
+    </div>
+    <div class="card m-3 pastlogs" style="width: 18rem;">
+      <div class="card-header">
+
+        <div class="row mt-4">
+          <section class="box">
+
+            <a class='btn btn-primary' href="/exerciseform/">
+              <i class="fas fa-plus"></i>
+              <span>Add Exercise</span>
+            </a>
+            <div class="col-md-6">
+              {{#each exercises as |exercise|}}
+              <div class="row mb-2">
+                <div class="col-md-8">
+                  <h4><a href="/project/{{exercise.id}}">{{exercise.exercise_name}}</a></h4>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </section>
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -23,23 +62,25 @@
         </div>
       </div>
     </div>
-      <div class="card w-50">
-        <div class="card-body">
-          <h5 class="card-title">Back</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-        </div>
+    <div class="card w-50">
+      <div class="card-body">
+        <h5 class="card-title">Back</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
       </div>
     </div>
+  </div>
+
+  <script src="/js/profile.js"></script>
