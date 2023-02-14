@@ -1,5 +1,4 @@
 const { Model, DataTypes, INTEGER } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Exercise extends Model {}
@@ -36,6 +35,13 @@ Exercise.init(
             type: DataTypes.INTEGER,
             allowNull: true,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+          },
         
     },
     {
