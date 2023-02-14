@@ -42,7 +42,7 @@
 }
 .box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }   
 
 .container{
