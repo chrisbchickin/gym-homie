@@ -18,7 +18,7 @@ const newExerciseHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/workouts');
       } else {
         alert('Failed to create exercise');
       }

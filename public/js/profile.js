@@ -15,6 +15,6 @@
     }
   };
   
-//   document
-//     .querySelector('.exercise-list')
-//     .addEventListener('click', delButtonHandler);
+  document
+    .querySelector('.exercise-list')
+    .addEventListener('click', delButtonHandler);
