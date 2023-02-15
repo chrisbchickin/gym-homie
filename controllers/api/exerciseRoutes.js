@@ -4,7 +4,6 @@ const { Exercise } = require('../../models');
 router.get('/', async (req,res) => {
     try{
         const allExerciseByCategory = await Exercise.findAll();
-        console.log(allExerciseByCategory);
         res.status(200).json(allExerciseByCategory);
     } catch (err) {
         res.status(500).json(err);

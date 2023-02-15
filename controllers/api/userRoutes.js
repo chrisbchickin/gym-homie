@@ -56,7 +56,6 @@ router.post('/', async (req, res) => {
         
         res.json({ user: userData, message: 'You are now logged in!' });
       });
-  
     } catch (err) {
       res.status(400).json(err);
     }
@@ -67,6 +66,7 @@ router.post('/', async (req, res) => {
       req.session.destroy(() => {
         res.status(204).end();
       });
+      res.render('homepage');
     } else {
       res.status(404).end();
     }
