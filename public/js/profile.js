@@ -2,7 +2,7 @@
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
-  
+      
       const response = await fetch(`/api/exercise/${id}`, {
         method: 'DELETE',
       });
@@ -15,6 +15,6 @@
     }
   };
   
-//   document
-//     .querySelector('.exercise-list')
-//     .addEventListener('click', delButtonHandler);
+  document
+    .querySelector('.exercise-list')
+    .addEventListener('click', delButtonHandler);
