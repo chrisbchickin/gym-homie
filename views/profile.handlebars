@@ -20,6 +20,26 @@
       <div class="box">
         <div>
           <h3> Welcome, {{user_name}} </h3>
+        <div class="row mt-4">
+          <section class="box">
+
+            <a class='btn btn-primary' href="/exerciseform/">
+              <i class="fas fa-plus"></i>
+              <span>Add Exercise</span>
+            </a>
+            <div class="col-md-6 exercise-list">
+              {{#each exercises as |exercise|}}
+              <div class="row mb-2">
+                <div class="col-md-8">
+                  <h4><a href="/project/{{exercise.id}}">{{exercise.exercise_name}}</a></h4>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </section>
         </div>
         <div class="card m-3 pastlogs" style="width: 18rem;">
           <div class="card-header">
