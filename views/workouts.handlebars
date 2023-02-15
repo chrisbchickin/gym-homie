@@ -1,6 +1,33 @@
-<div class="new-workout">
-    <h1> {{exercise-name}}</h1>
-    <h1> {{exercise-weight}}</h1>
-    <h1> {{exercise-reps}}</h1>
-    <h1> {{exercise-duration}}</h1>
-</div>
+<div class="container">
+  <div class="box">
+    <div>
+      <h3> Workouts: </h3>
+    </div>
+    <div class="card m-3 pastlogs" style="width: 18rem;">
+      <div class="card-header">
+
+        <div class="row mt-4">
+          <section class="box">
+
+            <a class='btn btn-primary' href="/exerciseform/">
+              <i class="fas fa-plus"></i>
+              <span>Add Exercise</span>
+            </a>
+
+            <div class="col-md-6">
+              {{#each exercises as |exercise|}}
+              <div class="row mb-2">
+                <div class="col-md-8">
+                  <h4>{{exercise.exercise_name}}</h4>
+                  <h4>Weight {{exercise.weights}}</h4>
+                  <h4>{{exercise.reps}}</h4>
+                  <h4>{{exercise.duration}}</h4>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+
+            <script src="/js/exerciseform.js"></script>
