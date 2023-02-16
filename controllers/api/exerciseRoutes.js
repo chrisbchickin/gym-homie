@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req, res) => {
    try{
-    console.log(`Got the whole thing right here: ${req.body}`);
+    console.log(`Got the whole thing right here: ${JSON.stringify(req.body)}`);
     const newExercise = await Exercise.create({
         exercise_name: req.body.exerciseName,
         category_id: req.body.categoryID,
