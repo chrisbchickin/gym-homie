@@ -26,6 +26,7 @@ router.post('/', async (req, res) => {
     console.log(newExercise);
     res.status(200).json(newExercise);
    } catch (err) {
+    console.log(`Hm what ${JSON.stringify(err)}`);
     res.status(400).json(err);
    };
 });
