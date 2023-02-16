@@ -54,13 +54,6 @@ router.get('/workouts', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-    /*
-    try {
-        res.render('workouts');
-    } catch (err) {
-        res.status(500).json(err);
-    }
-    */
 })
 
 module.exports = router;
