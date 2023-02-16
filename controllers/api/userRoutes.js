@@ -1,5 +1,14 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'gymhomies1234@gmail.com',
+    pass: 'fqljuysmrcpwjezu'
+  }
+});
 
 router.get('/', async (req, res) => {
     try {
@@ -14,7 +23,22 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
-        
+      console.log(req.body.email);
+
+      const mailOptions = {
+        from: 'gymhomies1234@gmail.com',
+        to: `${req.body.email}`,
+        subject: `Thank You for Joining GYM Homies ${req.body.user_name}`,
+        text: 'Thank you for joining our workout tracker! We are excited to help you track your progress and achieve your fitness goals. With our easy-to-use tracker, you can monitor your workouts, set new goals, and track your progress towards a healthier, happier you.'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
