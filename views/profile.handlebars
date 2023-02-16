@@ -1,14 +1,17 @@
-{{!-- <div>
+<div>
   <h3> Welcome, {{user_name}} </h3>
-</div> --}}
+</div>
 <div class="container exercise-list">
+
   <div style="display: flex; height: 600px; overflow: scroll; margin: 30px;">
-    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Logs</span>
+    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Past Workout Logs:</span>
       {{#each exercises as |exercise|}}
       <div class="text-center eachlog" href="/project/{{exercise.id}}">
-        <small>{{exercise.duration}}min</small>
-        <div class="separator"></div> <a href="/project/{{exercise.id}}">{{exercise.exercise_name}}</a> <br><small
-          class="date">{{exercise.date}}</small>
+        <small>{{exercise.duration}} min(s)</small>
+        <div class="separator"></div> <a href="/project/{{exercise.id}}">{{exercise.exercise_name}}</a> <br> <br>
+        <div class="weights"></div> <a href="/project/{{exercise.id}}">{{exercise.weights}} Lb(s)</a> <br>
+        <div class="reps"></div> <a href="/project/{{exercise.id}}">{{exercise.reps}} Rep(s) completed </a> <br> <br>
+        <small class="date">Workout Created on: {{exercise.date}}</small>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
@@ -16,7 +19,7 @@
       {{/each}}
     </div>
   </div>
-  <div style="display: flex; padding: 200px; height: 10px; ">
+  <div style="display: flex; padding: 200px; height: 10px; "> <span class="text-center" style="font-size: 30px;">Add a New Workout</span>
     <a role="button" href="/exerciseform"><span class="material-symbols-outlined text-center"
         style="color: rgb(0, 0, 0); font-size: 100px;" id="addicon">
         add

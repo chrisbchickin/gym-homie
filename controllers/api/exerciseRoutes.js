@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Exercise } = require('../../models');
+const dayjs = require('dayjs');
 
 router.get('/', async (req,res) => {
     try{
@@ -20,6 +21,7 @@ router.post('/', async (req, res) => {
         weights: req.body.exerciseWeight,
         duration: req.body.exerciseDuration,
         date: new Date(),
+      //  date: dayjs().format("MM/DD/YYYY"),
         user_id: req.session.user_id,
     });
     res.status(200).json(newExercise);
