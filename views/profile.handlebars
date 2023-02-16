@@ -1,67 +1,26 @@
-<div class="container">
-  <div style="display: flex; height: 600px; overflow: scroll; margin: 30px;">
-    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Logs</span>
 
-      <div class="text-center eachlog">
-        <small>90min</small>
-        <div class="separator"></div> Back <br><small class="date">01/01/2023</small>
-      </div>
-      <div style="display: flex; padding: 200px; height: 10px; ">
-        <a role="button" href="/exerciseform"><span class="material-symbols-outlined text-center"
-            style="color: rgb(0, 0, 0); font-size: 100px;" id="addicon">
-            add
-          </span></a>
-      </div>
-
+{{!-- <div>
+      <h3> Welcome, {{user_name}} </h3>
+    </div> --}}
+<div class="container"> 
+    <div  style="display: flex; height: 600px; overflow: scroll; margin: 30px;">
+    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Logs</span> 
+         {{#each exercises as |exercise|}}
+ <div class="text-center eachlog" href="/project/{{exercise.id}}">
+    <small>{{exercise.duration}}min</small> 
+     <div class="separator"></div> <a href="/project/{{exercise.id}}">{{exercise.exercise_name}}</a> <br><small class="date">{{exercise.date}}</small> </div>
+        {{/each}}
+      
+        </div>
+        </div>
+        <div style="display: flex; padding: 200px; height: 10px; ">
+      <a role="button" href="/exerciseform"><span class="material-symbols-outlined text-center" style="color: rgb(0, 0, 0); font-size: 100px;" id="addicon">
+        add
+        </span></a></div>
     </div>
+ 
 
-    <div class="container">
-      <div class="box">
-        <div>
-          <h3> Welcome, {{user_name}} </h3>
-        <div class="row mt-4">
-          <section class="box">
-
-            <div class="col-md-6 exercise-list">
-                <a class='btn btn-primary' href="/exerciseform/">
-                  <i class="fas fa-plus"></i>
-                  <span>Add Exercise</span>
-                </a>
-
-                <div class="col-md-6 exercise-list">
-                  {{#each exercises as |exercise|}}
-                  <div class="row mb-2">
-                    <div class="col-md-8">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Exercise name</th>
-                            <th scope="col">Weights (Lbs)</th>
-                            <th scope="col">Reps</th>
-                            <th scope="col">Duration</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>{{exercise.exercise_name}}</td>
-                            <td>{{exercise.weights}}</td>
-                            <td>{{exercise.reps}}</td>
-                            <td>{{exercise.duration}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <h4>{{exercise.exercise_name}}</h4>
-                    </div>
-                    <div class="col-md-4">
-                      <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
-                    </div>
-                  </div>
-                  {{/each}}
-                </div>
-              </section>
-            </div>
+    
 
           </div>
 
