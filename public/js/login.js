@@ -5,7 +5,6 @@ const loginFormHandler = async (event) => {
     const email = document.querySelector('#loginemail').value.trim();
     const password = document.querySelector('#loginpassword').value.trim();
 
-    
     if (email && password) {
         console.log(email, password);
       // Send a POST request to the API endpoint

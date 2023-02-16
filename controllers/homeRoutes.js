@@ -38,4 +38,22 @@ router.get('/exerciseform', withAuth, async (req, res) => {
     }
 })
 
+router.get('/workouts', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Exercise }],
+        });
+    
+        const user = userData.get({ plain: true });
+        console.log(user);
+        res.render('workouts', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
