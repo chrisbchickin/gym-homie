@@ -4,7 +4,8 @@
 <div class="container exercise-list">
 
   <div style="display: flex; height: 600px; overflow: scroll; margin: 30px;">
-    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Past Workout Logs:</span>
+    <div style="width: 400px; padding: 20px;"> <span class="text-center" style="font-size: 40px;">Past Workout
+        Logs:</span>
       {{#each exercises as |exercise|}}
       <div class="text-center eachlog" href="/project/{{exercise.id}}">
         <small>{{exercise.duration}} min(s)</small>
@@ -19,11 +20,10 @@
       {{/each}}
     </div>
   </div>
-  <div style="display: flex; padding: 200px; height: 10px; "> <span class="text-center" style="font-size: 30px;">Add a New Workout</span>
-    <a role="button" href="/exerciseform"><span class="material-symbols-outlined text-center"
-        style="color: rgb(0, 0, 0); font-size: 100px;" id="addicon">
-        add
-      </span></a>
+  <div style="display: flex flex-wrap ">
+    <div>
+       <p class="workouttext"><a role="button" href="/exerciseform">Add a New Workout -><img src="../css/images/d35622be50639d5384da00249ec86039.jpg" style="width:500px;height:500px;"></a></p>
+    </div>
   </div>
 </div>
 
