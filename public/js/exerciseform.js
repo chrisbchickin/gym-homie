@@ -5,23 +5,7 @@ const newExerciseHandler = async (event) => {
   const exerciseWeight = document.querySelector('#exercise-weight').value.trim();
   const exerciseReps = document.querySelector('#exercise-reps').value.trim();
   const exerciseDuration = document.querySelector('#exercise-duration').value.trim();
-  let categoryID;
-
-  let target = event.target;
-
-  function findcategoryid() {
-    if (categoryID === 1 || categoryID === 2) {
-      console.log(categoryID);
-      categoryID = target.getAttribute("data-id");
-      console.log(categoryID);
-      return categoryID;
-    } else {
-      return;
-    }
-  }
-
-  categoryID = findcategoryid();
-  console.log(categoryID + 'this is categoryID');
+  const categoryID = document.querySelector('#categorymenu').value;
 
   if ((exerciseName && exerciseWeight && exerciseReps && categoryID)
     || (exerciseName && exerciseDuration && categoryID)) {
@@ -35,7 +19,7 @@ const newExerciseHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/workouts');
+      document.location.replace('/profile');
     } else {
       alert('Failed to create exercise');
     }
@@ -45,7 +29,3 @@ const newExerciseHandler = async (event) => {
 document
   .querySelector('.new-exercise-form')
   .addEventListener('submit', newExerciseHandler);
-
-document
-  .querySelector('.dropdown-menu')
-  .addEventListener('click', newExerciseHandler);
