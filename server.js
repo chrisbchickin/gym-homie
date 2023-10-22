@@ -17,12 +17,6 @@ const sess = {
     resave: false,
     saveUninitialized: false,
 };
-const seedMigration = sequelize.defineMigration('seed', async (migration) => {
-    await Category.bulkCreate([
-        { name: 'Weight Lifting' },
-        { name: 'Cardio' },
-      ]);
-  });
 
 app.use(session(sess));
 
