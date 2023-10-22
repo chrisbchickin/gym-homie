@@ -13,7 +13,7 @@ Exercise.belongsTo(User, {
 
 Category.hasMany(Exercise, {
     foreignKey: 'category_id',
-    onDelete: 'CASCADE',
+    // onDelete: 'CASCADE',
 });
 
 Exercise.belongsTo(Category, {
