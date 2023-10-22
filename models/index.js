@@ -11,13 +11,13 @@ Exercise.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Category.hasMany(Exercise, {
-    foreignKey: 'category_id',
-    onDelete: 'CASCADE',
-});
+// Category.hasMany(Exercise, {
+//     foreignKey: 'category_id',
+//     onDelete: 'CASCADE',
+// });
 
-Exercise.belongsTo(Category, {
-    foreignKey: 'category_id',
-})
+// Exercise.belongsTo(Category, {
+//     foreignKey: 'category_id',
+// })
 
 module.exports = { User, Category, Exercise };

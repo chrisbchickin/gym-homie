@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const Category = require('./models/Category')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,7 +17,13 @@ const sess = {
     resave: false,
     saveUninitialized: false,
 };
-//helloooooo
+const seedMigration = sequelize.defineMigration('seed', async (migration) => {
+    await Category.bulkCreate([
+        { name: 'Weight Lifting' },
+        { name: 'Cardio' },
+      ]);
+  });
+
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

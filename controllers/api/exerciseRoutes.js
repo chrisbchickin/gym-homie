@@ -13,7 +13,6 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req, res) => {
    try{
-    console.log(`Got the whole thing right here: ${JSON.stringify(req.body)}`);
     const newExercise = await Exercise.create({
         exercise_name: req.body.exerciseName,
         category_id: req.body.categoryID,
@@ -23,7 +22,6 @@ router.post('/', async (req, res) => {
         date: new Date(),
         user_id: req.session.user_id,
     });
-    console.log(newExercise);
     res.status(200).json(newExercise);
    } catch (err) {
     console.log(`Hm what ${JSON.stringify(err)}`);

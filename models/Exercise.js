@@ -17,7 +17,8 @@ Exercise.init(
         },
         category_id: {
             type: DataTypes.INTEGER,
-            references: { model: 'category', key: 'id' }, 
+            allowNull: false,
+            // references: { model: 'category', key: 'id' }, 
         }, 
         date: {
             type: DataTypes.DATE,
