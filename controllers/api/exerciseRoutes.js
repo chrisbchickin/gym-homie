@@ -15,7 +15,6 @@ router.post('/', async (req, res) => {
    try{
     const newExercise = await Exercise.create({
         exercise_name: req.body.exerciseName,
-        category_id: req.body.categoryID,
         reps: req.body.exerciseReps,
         weights: req.body.exerciseWeight,
         duration: req.body.exerciseDuration,

@@ -2,21 +2,18 @@
     {
         
         "exercise_name": "Bench Press",
-        "category_id": 1,
         "user_id": 1,
         "date": "01/01/2023"
     },
     {
         
         "exercise_name": "Squat",
-        "category_id": 1,
         "user_id": 1,
         "date": "01/01/2023"
     },
     {
         
         "exercise_name": "Running",
-        "category_id": 2,
         "user_id": 1,
         "date": "01/01/2023"
     }
