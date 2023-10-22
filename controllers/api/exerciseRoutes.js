@@ -3,8 +3,8 @@ const { Exercise } = require('../../models');
 
 router.get('/', async (req,res) => {
     try{
-        const allExerciseByCategory = await Exercise.findAll();
-        res.status(200).json(allExerciseByCategory);
+        const allExercises = await Exercise.findAll();
+        res.status(200).json(allExercises);
     } catch (err) {
         res.status(500).json(err);
     }
