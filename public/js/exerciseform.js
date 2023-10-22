@@ -21,6 +21,7 @@ const newExerciseHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
+      console.log(exerciseName, categoryID, exerciseWeight, exerciseReps, exerciseDuration);
       alert('Failed to create exercise');
     }
   }
